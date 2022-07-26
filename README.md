@@ -164,6 +164,7 @@ variableScope();
 ```
 ## Q.8 What is Hoisting in JavaScript?
 JavaScript Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code.
+
 **Example 01:** Function Hoisting
 ```js
 getName('Anupam Kumar')
@@ -223,9 +224,7 @@ console.log(typeof number); // object
 | Converted to zero (0) while performing primitive operations | Converted to NaN while performing primitive operations |
 
 ## Q.12 What is the difference between `==` and `===`?
-The `==` is the abstract equality operator while `===` is the strict equality operator. The `==` operator will compare for equality after doing any necessary type conversions.
-
-The `===` operator will not do type conversion, so if two values are not the same type `===` will simply return false. When using `==`, funky things can happen.
+The `==` is the abstract equality operator while `===` is the strict equality operator. The `==` operator will compare for equality after doing any necessary type conversions.The `===` operator will not do type conversion, so if two values are not the same type `===` will simply return false. When using `==`, funky things can happen.
 ```js
 1 == '1'; // true
 1 == [1]; // true
@@ -503,3 +502,135 @@ for (let i of list) {
 |Iterates through the elements in an array.| Iterates through the elements in an array.|
 |Executes a callback for each element.| "Maps" each element to a new element by calling the function on each element, creating a new array as a result.|
 |Does not return a value.| Return new array.
+
+## Q.21 What is a RegExp object?
+A regular expression is an object that describes a pattern of characters.
+
+## Q.22 What are the benefits of using arrow function function?
+Arrow syntax automatically binds this to the surrounding code's context.And `=>` is shorter and simpler than function, although stylistic issues are often subjective.
+```js
+let greet = () => console.log('Hello'); //No Argument
+greet(); // Hello
+
+let greet = x => console.log(x); //One Argument
+greet('Hello'); // Hello 
+
+let age = 25;
+
+let welcome = (age < 18) ?() => console.log('Baby') : () => console.log('Adult'); //An Expression
+welcome(); // Adult
+
+let area = (r) => {
+  const pi = 3.14;
+  return pi * r * r;
+}
+let result = area(10); // Multiline
+console.log(result); // 314
+```
+## Q.23 What is a first class function?
+In javaScript, functions can be stored as a variable inside an object or an array as well as it can be passed as an argument or be returned by another function. That makes function first-class function in JavaScript.
+```js
+const message = function() {
+   console.log("Hello World!");
+}
+message(); //function to a variable
+
+function sayHello() {
+   return "Hello, ";
+}
+function greeting(helloMessage, name) {
+  console.log(helloMessage() + name);
+}
+greeting(sayHello, "JavaScript!");//function as an Argument
+
+function sayHello() {
+   return function() {
+      console.log("Hello!");
+   }
+} //Return a function
+
+const sayHello = function() {
+   return function() {
+      console.log("Hello!");
+   }
+}
+const myFunc = sayHello();
+myFunc(); //Using a variable
+
+function sayHello() {
+   return function() {
+      console.log("Hello!");
+   }
+}
+sayHello()(); //Using double parentheses
+```
+We are using double parentheses ()() to invoke the returned function as well.
+## Q.24 What is a higher order function?
+A Higher-Order function is a function that receives a function as an argument or returns the function as output.
+For e.g, Array.prototype.map(), Array.prototype.filter() , Array.prototype.forEach() and Array.prototype.reduce() are some of the Higher-Order functions in javascript.
+
+## Q.25 What is a unary function?
+Unary function (i.e. monadic) is a function that accepts exactly one argument. It stands for single argument accepted by a function.
+```js
+const unaryFunction = (number) => number + 10;
+console.log(unaryFunction(10)); // 20
+```
+## Q.26 What is currying function?
+Currying is the process of taking a function with multiple arguments and turning it into a sequence of functions each with only a single argument.
+
+In other words, when a function, instead of taking all arguments at one time, takes the first one and return a new function that takes the second one and returns a new function which takes the third one, and so forth, until all arguments have been fulfilled.
+```js
+// Normal function
+const add = (a, b, c) => {
+  return a + b + c;
+};
+console.log(add(10, 10, 10)); // 30
+
+// Currying function
+const addCurry = (a) => {
+  return (b) => {
+    return (c) => {
+      return a + b + c;
+    };
+  };
+};
+console.log(addCurry(20)(20)(20)); // 60
+```
+## Q.27 What is Constructor function in js?
+A constructor is a special function that creates and initializes an object instance of a class. In JavaScript, a constructor gets called when an object is created using the `new` keyword.
+
+The purpose of a constructor is to create a new object and set values for any existing object properties.
+```js
+function User() {
+    this.name = 'Bob';
+}
+var user = new User();
+var user = new User(); //Create Multiple Objects
+
+function Employee(name, age) {
+  this.name = name;
+  this.age = age;
+} //Constructor with Parameters
+var emp1 = new Employee('Anupam Rai', 28);
+console.log(emp1.name);// "Anupam Rai"
+console.log(emp1.age );// 28
+```
+## Q.28 What is a pure function?
+Pure functions are functions that accept an input and returns a value without modifying any data outside its scope(Side Effects). Its output or return value must depend on the input/arguments and pure functions must return a value.
+- It is a pure function because you always get a Hello <name> as output for the <name> pass as an input.
+```js
+// Pure Function
+function sayGreeting(name) {
+  return `Hello ${name}`;
+}
+console.log(sayGreeting("World"));
+```
+- The function's output now depends on an outer state called greeting. What if someone changes the value of the greeting variable to Hola? It will change the output of the sayGreeting() function even when you pass the same input.
+```js
+  // Not a Pure function
+let greeting = "Hello";
+function sayGreeting(name) {
+  return `${greeting} ${name}`;
+}
+console.log(sayGreeting("World"));
+ ```
