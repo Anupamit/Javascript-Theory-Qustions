@@ -1,4 +1,5 @@
-# Javascript-Theory-Qustions
+## Javascript-Theory-Qustions
+
 
 ## Q 1. List out important features of JavaScript ES6?
 - a. Template Strings
@@ -66,6 +67,9 @@ var obj2 = { age: 35, country: 'INDIA'}
 const employee = { ...obj1, ...obj2 }
 console.log(employee); // { "id": 101, "name": "Rajiv Sandal", "age": 35, "country": "INDIA" }
 ```
+<div align="right">
+    <b><a href="Javascript-Theory-Qustions">↥ On top</a></b>
+</div>
 
 ## Q.3 What is Sets?
 Sets are a new object type with ES6 (ES2015) that allow to create collections of unique values. The values in a set can be either simple primitives like strings or integers, but more complex object types like object literals or arrays can also be part of a set.
