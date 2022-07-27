@@ -68,6 +68,7 @@ const employee = { ...obj1, ...obj2 }
 console.log(employee);  // { "id": 101, "name": "Rajiv Sandal", "age": 35, "country": "INDIA" }
 ```
 **Rest Operator**
+
 The rest operator (...) instructs the computer to add the rest of the user-supplied values into an array.
 ```js
 const [firstName, lastName, ...otherInfo] = ["Oluwatobi", "Sofela", "CodeSweetly", "Web Developer", "Male"];
@@ -904,3 +905,107 @@ console.log(myCar.color); // undefined
 delete myCar.batteryLife;
 console.log(myCar.batteryLife); // 300
 ```
+## Q.44 What is shallow copy and deep copy in javascript?
+**Shallow Copy**
+
+Shallow copy is a bit-wise copy of an object. A new object is created that has an exact copy of the values in the original object. If any of the fields of the object are references to other objects, just the reference addresses are copied i.e., only the memory address is copied.
+A Shallow copy of the object can be done using object.assign()
+```js
+let obj = {
+  a: 10,
+  b: 20,
+};
+
+let objCopy = Object.assign({}, obj);
+console.log(objCopy); // Result - { a: 1, b: 2 }
+```
+**Deep Copy**
+A deep copy copies all fields, and makes copies of dynamically allocated memory pointed to by the fields. A deep copy occurs when an object is copied along with the objects to which it refers.
+
+A Deep copy of the object can be done using JSON.parse(JSON.stringify(object))
+```js
+let obj2 = {
+  a: 10,
+  b: {
+    c: 20
+  }
+};
+let newObj = JSON.parse(JSON.stringify(obj2));
+obj2.b.c = 30;
+console.log(obj2); // { a: 10, b: { c: 20 } }
+console.log(newObj); // { a: 10, b: { c: 20 } }
+```
+## Q.45 What is Class in js?
+Classes are in fact `"special functions"`, and just as you can define function expressions and function declarations, the class syntax has two components: `class expressions` and `class declarations`.
+```js
+// Unnamed Class
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+}
+console.log(Rectangle.name); // Rectangle
+
+// Named Class
+let Triangle = class TriangleClass {
+  constructor(base, height) {
+    this.base = base;
+    this.height = height;
+  }
+};
+console.log(Triangle.name); // TriangleClass
+```
+## Q.46 What is difference between private, public and static variables?
+Private variables can be accessed by all the members (functions and variables) of the owner object but not by any other object. Public variables can be accessed by all the members of the owner as well as other objects that can access the owner. Static variables are related to a class. They come into existence as soon as a class come into existence.
+```js
+// Constructor Function
+function MyClass () {
+ 
+  var privateVariable = "I am private!";  // Private variable 
+  this.publicVariable = "I am public!";  // Public variable 
+
+  this.publicMethod = function () {  // Public Method
+    return privateVariable;
+  };
+}
+```
+## Q.47 How does await and async works in es6?
+The async and await keywords enable asynchronous, promise-based behavior to be written in a cleaner style, avoiding the need to explicitly configure promise chains.
+
+Async keyword is used along with the function declaration which specifies that this function is now able to accept all types of asynchronous events on itself. Await basically waits for the results which are particularly to be fetched from the source from which that async function is about to fetch the data.
+```js
+// async() and await()
+async function fetchMethod() {
+  try {
+    let response = await fetch("https://api.github.com/users/1");
+    let data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+fetchMethod();
+```
+## Q.48 Explain fetch() properties in JavaScript?
+A fetch() function is available in the global window object. The fetch() function takes one mandatory argument, the path to the resource you want to fetch. It returns a Promise, whether it is successful or not. If request is successful .then() function will receive Response object, if request fails then .catch() function will receive an error object
+```js
+fetch("https://api.github.com/users/learning-zone")
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data);
+  })
+  .catch(function (err) {
+    console.log("Something went wrong!", err);
+  });
+```
+## Q.49 What is rendering in JavaScript?
+JavaScript-powered content needs to be rendered before it can output meaningful code and be displayed for the client. 
+
+## Q.50 What is throttling and debouncing in javascript?
+`Throttling` enforces a maximum number of times a function can be called over time. As in "execute this function at most once every 100 milliseconds."
+
+`Debouncing` enforces that a function not be called again until a certain amount of time has passed without it being called. As in "execute this function only if 100 milliseconds have passed without it being called."
