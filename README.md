@@ -1,5 +1,4 @@
-## Javascript-Theory-Qustions
-
+### Table of Contents
 
 ## Q 1. List out important features of JavaScript ES6?
 - a. Template Strings
@@ -13,6 +12,8 @@
 - i. Iterator
 - j. Genrators
 - k. Symbols
+
+**[⬆ Back to Top](#table-of-contents)**
 
 ## Q 2. What is Spread Operator
 Spread operator allows iterables( arrays / objects / strings ) to be expanded into single arguments/elements.
@@ -87,6 +88,8 @@ console.log(otherInfo);  // {companyName: "CodeSweetly", profession: "Web Develo
     <b><a href="Javascript-Theory-Qustions">↥ On top</a></b>
 </div>
 
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Q.3 What is Sets?
 Sets are a new object type with ES6 (ES2015) that allow to create collections of unique values. The values in a set can be either simple primitives like strings or integers, but more complex object types like object literals or arrays can also be part of a set.
 ```js
@@ -111,6 +114,7 @@ if (x === 10) {
 console.log(x);
 // expected output: 20
 ```
+**[⬆ Back to Top](#table-of-contents)**
 
 ## Q.5  What are the arro function?
 An arrow function is a shorter syntax for a function expression and does not have its own this, arguments, super, or new.target. 
@@ -138,6 +142,7 @@ This is line two.`);
     <p>Name: ${person.age}</p>
   </div>
 ```
+**[⬆ Back to Top](#table-of-contents)**
 
 ## Q.7 What are the differences between variables created using let, var or const?
 Variables declared using the var keyword are scoped to the function in which they are created, or if created outside of any function, to the global object. let and const are block scoped, meaning they are only accessible within the nearest set of curly braces (function, if-else block, or for-loop).
@@ -178,6 +183,8 @@ console.log(z); // ReferenceError: z is not defined
 
 variableScope();
 ```
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Q.8 What is Hoisting in JavaScript?
 JavaScript Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code.
 
@@ -204,6 +211,9 @@ All declarations (function, var, let, const and class) are hoisted in JavaScript
 console.log(x);  // Output: ReferenceError: x is not defined
 let x = 52;
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Q.9 What is the precedence order between local and global variables?
 A local variable takes precedence over a global variable with the same name.
 ```js
@@ -230,6 +240,9 @@ const number = null;
 console.log(number); // null
 console.log(typeof number); // object
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Q.11 Difference between null and undefine
 | Null | Undefined |
 |---- | -----------|
@@ -253,6 +266,9 @@ let x = null;
 console.log(x == null); // true
 console.log(x == undefined); // true
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Q.13  What is the difference between typeof and instanceof operator?
 The typeof operator checks if a value has type of primitive type which can be one of boolean, function, object, number, string, undefined and symbol (ES6).
 ```js
@@ -280,6 +296,9 @@ typeof NaN // Number
 
 Number.isNaN('Hello'); // false
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Q.15 What is the difference between slice and splice?
 The `slice()` method returns a new array with a copied slice from the original array. The first optional argument is the beginning index and the second optional argument is the ending index (non-inclusive).
 ```js
@@ -305,6 +324,8 @@ console.log(numbers); // Original array is mutated.
 | Returns the subset of original array | Returns the deleted elements as array  |
 | Used to pick the elements from array | Used to insert or delete elements to/from array|
 
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Q.16 Explain arrays in JavaScript?
 JavaScript array is an object that represents a collection of similar type of elements. It can holds values (of any type) not particularly in named properties/keys, but rather in numerically indexed positions.
 ```js
@@ -329,6 +350,9 @@ for (let i = 0; i < fruits.length; i++) {
   console.log(fruits[i]);
 }
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Q.17  Explain array methods join(), pop(), push(), shift(), unshift(), concat(), map(), filter(), reduce(), reduceRight(), every(), some(), indexOf(), lastIndexOf(), find(), findIndex(), includes(), forEach().
 **1. array.join()**:
 The `join()` method creates and returns a new string by concatenating all of the elements in an array (or an array-like object), separated by commas or a specified separator string. If the array has only one item, then that item will be returned without using the separator.
@@ -420,6 +444,8 @@ function isBelowThreshold(currentValue) {
 let array1 = [1, 30, 39, 29, 10, 13];
 console.log(array1.every(isBelowThreshold)); // Output: true
 ```
+**[⬆ Back to Top](#table-of-contents)**
+
 **12. array.some()**:
 The some() method tests whether at least one element in the array passes the test implemented by the provided function. It returns a Boolean value.
 ```js
@@ -488,6 +514,9 @@ const numbers = [1, 2, 5, 3, 4];
 numbers.sort((a, b) => a - b);
 console.log(numbers); // [1,2,3,4,5]
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Q.18 Difference between Spread Syntex and Rest Syntax?
 The main difference between `rest` and `spread` is that the rest operator puts the rest of some specific user-supplied values into a JavaScript array. But the spread syntax expands iterables into individual elements.
 
@@ -512,6 +541,9 @@ for (let i of list) {
   console.log(i); // "10", "20", "30"
 }
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Q.20 What is the difference forEach and map?
 | forEach           |  map                     |
 |-------------------|--------------------------|
@@ -543,6 +575,9 @@ let area = (r) => {
 let result = area(10); // Multiline
 console.log(result); // 314
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Q.23 What is a first class function?
 In javaScript, functions can be stored as a variable inside an object or an array as well as it can be passed as an argument or be returned by another function. That makes function first-class function in JavaScript.
 ```js
@@ -581,6 +616,9 @@ function sayHello() {
 sayHello()(); //Using double parentheses
 ```
 We are using double parentheses ()() to invoke the returned function as well.
+
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Q.24 What is a higher order function?
 A Higher-Order function is a function that receives a function as an argument or returns the function as output.
 For e.g, Array.prototype.map(), Array.prototype.filter() , Array.prototype.forEach() and Array.prototype.reduce() are some of the Higher-Order functions in javascript.
@@ -612,6 +650,8 @@ const addCurry = (a) => {
 };
 console.log(addCurry(20)(20)(20)); // 60
 ```
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Q.27 What is Constructor function in js?
 A constructor is a special function that creates and initializes an object instance of a class. In JavaScript, a constructor gets called when an object is created using the `new` keyword.
 
@@ -655,6 +695,8 @@ A function must pass two tests to be considered **pure**:
 * Same inputs always return same outputs
 * No side-effects
 
+**[⬆ Back to Top](#table-of-contents)**
+
 ##  Q.29  What is an arguments object?
 The arguments object is an Array-like object ( arguments ) accessible inside functions that contains the values of the arguments passed to that function.
 ```js
@@ -677,6 +719,9 @@ console.log(fun1.length); // 0
 function fun2(arg1, arg2) {}
 console.log(fun2.length); // 2
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Q.31 What is the difference between Call, Apply and Bind?
 - Call invokes the function and allows you to pass in arguments one by one.
 - Apply invokes the function and allows you to pass in arguments as an array.
@@ -716,6 +761,9 @@ var sayEmployee2 = say.bind(employee2);
 sayEmployee1("Hi");    // Hi Sahima Mutti 
 sayEmployee2("Hello"); // Hello Aarush Krishna 
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Q.32 What is an anonymous function?
 An anonymous function is a function without a name. Anonymous functions are commonly assigned to a variable name or used as a callback function.
 ```js
@@ -753,6 +801,8 @@ The this keyword refers to an object. Which object depends on how this is being 
 - In an event, this refers to the element that received the event.
 - Methods like call(), apply(), and bind() can refer this to any object.
 
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Q.34 What are closures?
 A closure is the combination of a function bundled together with references to its surrounding state.A closure gives you access to an outer function's scope from an inner function.
 ```js
@@ -780,6 +830,9 @@ fun2();
 10
 ```
 - Variables created without a declaration keyword (var, let, or const) are always global, even if they are created inside a function. Global and local variables with the same name are different variables. Modifying one, does not modify the other.
+
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Q.35 What is callback() function in javascript?
 A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
 ```js
@@ -813,6 +866,9 @@ document.getElementById('buttons')
       }
     });
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Q.38 What is the use of setTimeout?
 The `setTimeout()` method is used to call a function or evaluates an expression after a specified number of milliseconds.
 ```js
@@ -852,6 +908,9 @@ Hello World!
 stop
 Bye World!
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Q.41 Explain the difference between mutable and immutable objects?
 A mutable object is an object whose state can be modified after it is created. An immutable object is an object whose state cannot be modified after it is created.
 
@@ -905,6 +964,9 @@ console.log(myCar.color); // undefined
 delete myCar.batteryLife;
 console.log(myCar.batteryLife); // 300
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Q.44 What is shallow copy and deep copy in javascript?
 **Shallow Copy**
 
@@ -935,6 +997,9 @@ obj2.b.c = 30;
 console.log(obj2); // { a: 10, b: { c: 20 } }
 console.log(newObj); // { a: 10, b: { c: 20 } }
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Q.45 What is Class in js?
 Classes are in fact `"special functions"`, and just as you can define function expressions and function declarations, the class syntax has two components: `class expressions` and `class declarations`.
 ```js
@@ -970,6 +1035,8 @@ function MyClass () {
   };
 }
 ```
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Q.47 How does await and async works in es6?
 The async and await keywords enable asynchronous, promise-based behavior to be written in a cleaner style, avoiding the need to explicitly configure promise chains.
 
@@ -1002,6 +1069,9 @@ fetch("https://api.github.com/users/learning-zone")
     console.log("Something went wrong!", err);
   });
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Q.49 What is rendering in JavaScript?
 JavaScript-powered content needs to be rendered before it can output meaningful code and be displayed for the client. 
 
@@ -1009,3 +1079,5 @@ JavaScript-powered content needs to be rendered before it can output meaningful 
 `Throttling` enforces a maximum number of times a function can be called over time. As in "execute this function at most once every 100 milliseconds."
 
 `Debouncing` enforces that a function not be called again until a certain amount of time has passed without it being called. As in "execute this function only if 100 milliseconds have passed without it being called."
+
+**[⬆ Back to Top](#table-of-contents)**
