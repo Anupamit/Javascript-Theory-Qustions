@@ -68,7 +68,9 @@ var obj2 = { age: 35, country: 'INDIA'}
 const employee = { ...obj1, ...obj2 }
 console.log(employee);  // { "id": 101, "name": "Rajiv Sandal", "age": 35, "country": "INDIA" }
 ```
-**Rest Operator**
+**[⬆ Back to Top](#table-of-contents)**
+
+## Q.3 Rest Operator
 
 The rest operator (...) instructs the computer to add the rest of the user-supplied values into an array.
 ```js
@@ -90,14 +92,16 @@ console.log(otherInfo);  // {companyName: "CodeSweetly", profession: "Web Develo
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## Q.3 What is Sets?
-Sets are a new object type with ES6 (ES2015) that allow to create collections of unique values. The values in a set can be either simple primitives like strings or integers, but more complex object types like object literals or arrays can also be part of a set.
+## Q.4 What is Sets?
+Sets are a new object type introduced in ES6 (ES2015) that allow the creation of collections of unique values. The values in a set can be either simple primitives like strings or integers, but more complex object types like object literals or arrays can also be part of a set.
 ```js
 let numbers = new Set([10, 20, 20, 30, 40, 50]);
 console.log(numbers); // Set(5) {10, 20, 30, 40, 50}
 console.log(typeof numbers); // Object
 ```
-## Q.4 What are global variables?
+**[⬆ Back to Top](#table-of-contents)**
+
+## Q.5 What are global variables?
 Global variables are declared outside of a function or declared with a window object for accessibility throughout the program (unless shadowed by locals). If you declare a variable without using var, even if it's inside a function, it will still be seen as global.
 
 The var statement declares a function-scoped or globally-scoped variable, optionally initializing it to a value.
@@ -116,7 +120,7 @@ console.log(x);
 ```
 **[⬆ Back to Top](#table-of-contents)**
 
-## Q.5  What are the arro function?
+## Q.6  What are the arrow function?
 An arrow function is a shorter syntax for a function expression and does not have its own this, arguments, super, or new.target. 
 ```js
 let add = (x,y,z) => {
@@ -125,8 +129,9 @@ let add = (x,y,z) => {
 let add = (x,y,z) => x + y + z;
 console.log(add(1,2,3));
 ```
-## Q.6 What are template literals in es6?
+## Q.7 What are template literals in ES6?
 Template literals help make it simple to do string interpolation, or to include variables in a string.
+
 ```js
 const person = { name: 'Tyler', age: 28 };
 console.log(`Hi, my name is ${person.name} and I am ${person.age} years old!`);
@@ -144,8 +149,11 @@ This is line two.`);
 ```
 **[⬆ Back to Top](#table-of-contents)**
 
-## Q.7 What are the differences between variables created using let, var or const?
-Variables declared using the var keyword are scoped to the function in which they are created, or if created outside of any function, to the global object. let and const are block scoped, meaning they are only accessible within the nearest set of curly braces (function, if-else block, or for-loop).
+## Q.8 What are the differences between variables created using let, var or const?
+Variables declared using the var keyword are function-scoped, while let and const are block-scoped.
+OR
+Variables declared using the `var` keyword are function-scoped, meaning they are accessible within the function in which they are created or, if created outside of any function, to the global object. On the other hand, `let` and `const` are block-scoped, which means they are only accessible within the nearest enclosing block, such as a function, if-else block, or for-loop.
+
 ```js
 /**
  * var declared variables are accessible anywhere in the function scope.
@@ -185,10 +193,11 @@ variableScope();
 ```
 **[⬆ Back to Top](#table-of-contents)**
 
-## Q.8 What is Hoisting in JavaScript?
-JavaScript Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code.
+## Q.9 What is Hoisting in JavaScript?
+JavaScript Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables, or classes to the top of their scope, prior to execution of the code.
 
 **Example 01:** Function Hoisting
+Function declarations are fully hoisted, meaning both the declaration and the definition of the function are moved to the top of the scope. This allows you to call a function before it appears in the code.
 ```js
 getName('Anupam Kumar')
 function getName(name){
@@ -196,6 +205,7 @@ function getName(name){
 } 
 ```
 **Example 02:** Variable Hoisting
+When variables are hoisted, the declaration of the variable is moved to the top of its scope, but the initialization remains in place. If a variable is accessed before it is declared, JavaScript will not throw an error but will return undefined.
 ```js
 console.log(getName); //Undefine
 var getName='Anupam Kumar';
@@ -214,8 +224,9 @@ let x = 52;
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## Q.9 What is the precedence order between local and global variables?
+## Q.10 What is the precedence order between local and global variables?
 A local variable takes precedence over a global variable with the same name.
+
 ```js
 var msg = "Good morning";
 function greeting() {
@@ -226,15 +237,17 @@ greeting();
 // Output
 Good Evening
 ```
-## Q.10 What is Undefine and null?
-Undefined means a variable has been declared, but the value of that variable has not yet been defined
+## Q.11 What is Undefine and null?
+Undefined means a variable has been declared, but the value of that variable has not yet been defined.
+
 ```js
 let name;
 console.log(name); // undefined
 console.log(typeof(name))  // undefined
 
 ```
-In JavaScript, null is a special value that represents empty or unknown value.
+In JavaScript, null is a special value that represents an empty or unknown value.
+
 ```js
 const number = null;
 console.log(number); // null
@@ -243,7 +256,8 @@ console.log(typeof number); // object
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## Q.11 Difference between null and undefine
+## Q.12 Difference between null and undefine
+
 | Null | Undefined |
 |---- | -----------|
 | It is an assignment value which indicates that variable points to no object.  | It is not an assignment value where a variable has been declared but has not yet been assigned a value. |
@@ -252,8 +266,10 @@ console.log(typeof number); // object
 | Indicates the absence of a value for a variable | Indicates absence of variable itself |
 | Converted to zero (0) while performing primitive operations | Converted to NaN while performing primitive operations |
 
-## Q.12 What is the difference between `==` and `===`?
-The `==` is the abstract equality operator while `===` is the strict equality operator. The `==` operator will compare for equality after doing any necessary type conversions.The `===` operator will not do type conversion, so if two values are not the same type `===` will simply return false. When using `==`, funky things can happen.
+## Q.13 What is the difference between `==` and `===`?
+The `==` operator is the abstract equality operator, while `===` is the strict equality operator. The `==` operator compares for equality after doing any necessary type conversions. The `===` operator will not do type conversion, so if two values are not the same type, `===` will simply return false. When using `==`, unexpected behavior can occur.
+
+
 ```js
 1 == '1'; // true
 1 == [1]; // true
@@ -269,8 +285,9 @@ console.log(x == undefined); // true
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## Q.13  What is the difference between typeof and instanceof operator?
-The typeof operator checks if a value has type of primitive type which can be one of boolean, function, object, number, string, undefined and symbol (ES6).
+## Q.14  What is the difference between typeof and instanceof operator?
+The `typeof` operator checks if a value has the type of a primitive type, which can be one of boolean, function, object, number, string, undefined, or symbol (ES6).
+
 ```js
 const x = "Hello World";
 const y = new String("Hello World");
@@ -278,15 +295,17 @@ const y = new String("Hello World");
 typeof x; // returns 'string'
 typeof y; // returns 'object'
 ```
-The instanceof is a binary operator, accepting an object and a constructor. It returns a boolean indicating whether or not the object has the given constructor in its prototype chain.
+The `instanceof` operator is a binary operator that returns a boolean indicating whether or not the object has the given constructor in its prototype chain.
+
 ```js
 const a = "Hello World";
 const b = new String("Hello World");
 a instanceof String; // returns false
 b instanceof String; // returns true
 ```
-## Q.14 What is isNaN?
-The isNaN() function determines whether a value is NaN ( Not a Number ) or not. This function returns true if the value equates to NaN. The isNaN() method converts the value to a number before testing it.
+## Q.15 What is isNaN?
+The `isNaN()` function determines whether a value is NaN (Not a Number) or not. This function returns true if the value equates to NaN. The `isNaN()` method converts the value to a number before testing it.
+
 ```js
 isNaN('Hello') // true
 
@@ -299,8 +318,11 @@ Number.isNaN('Hello'); // false
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## Q.15 What is the difference between slice and splice?
-The `slice()` method returns a new array with a copied slice from the original array. The first optional argument is the beginning index and the second optional argument is the ending index (non-inclusive).
+## Q.16 What is the difference between `slice` and `splice`?
+1. The `slice()` method returns a new array with a copied slice from the original array. 
+2. It does not modify the original array.
+3. The first optional argument is the beginning index and the second optional argument is the ending index (non-inclusive).
+
 ```js
 let languages = [ "JavaScript", "Python", "Java", "PHP" ];
 languages.slice(1,3); // ["Python", "Java"]
@@ -309,14 +331,17 @@ languages.slice(2); // (from index 2 until the end of the array).
 console.log(languages); // the original array is not mutated.
 // [ "JavaScript", "Python", "Java", "PHP" ]
 ```
-The `splice()` method changes the content of the array in place and can be used to add or remove items from the array.
-When only one argument is provided, all the items after the provided starting index are removed from the array.
+
+1. The` splice()` method changes the content of the array in place and can be used to add or remove items from the array.
+2. When only one argument is provided, all the items after the provided starting index are removed from the array.
+   
 ```js
 let numbers = [10, 20, 30];
 numbers.splice(2, 1, 40, 50); // returns removed array:[30]
 console.log(numbers); // Original array is mutated.
 // returns: [10, 20, 40, 50]
 ```
+
 **Difference:**
 | Slice | Splice |
 |---- | ---------|
@@ -326,8 +351,9 @@ console.log(numbers); // Original array is mutated.
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## Q.16 Explain arrays in JavaScript?
-JavaScript array is an object that represents a collection of similar type of elements. It can holds values (of any type) not particularly in named properties/keys, but rather in numerically indexed positions.
+## Q.17 Explain arrays in JavaScript?
+A JavaScript `array` is an object that represents a collection of similar type elements. It can hold values (of any type) not particularly in named properties/keys, but rather in numerically indexed positions.
+
 ```js
 const array_name = [item-1, item-2, item-3, ...];    
 ```
@@ -353,9 +379,11 @@ for (let i = 0; i < fruits.length; i++) {
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## Q.17  Explain array methods join(), pop(), push(), shift(), unshift(), concat(), map(), filter(), reduce(), reduceRight(), every(), some(), indexOf(), lastIndexOf(), find(), findIndex(), includes(), forEach().
+## Q.18 Explain Array Methods `join()`, `pop()`, `push()`, `shift()`, `unshift()`, `concat()`, `map()`, `filter()`, `reduce()`, `reduceRight()`, `every()`, `some()`, `indexOf()`, `lastIndexOf()`, `find()`, `findIndex()`, `includes()`, `forEach()`, and `sort()`
+
 **1. array.join()**:
 The `join()` method creates and returns a new string by concatenating all of the elements in an array (or an array-like object), separated by commas or a specified separator string. If the array has only one item, then that item will be returned without using the separator.
+
 ```js
 let elements = ['Anupam', 'Kumar', 'Rai'];
 console.log(elements.join()); // Output: Anupam,Kumar,Rai
@@ -363,7 +391,8 @@ console.log(elements.join('')); // Output: AnupamKumarRai
 console.log(elements.join('-')); // Output: Anupam-Kumar-Rai
 ```
 **2. array.pop()**:
-The pop() method removes the last element from an array and returns that element. This method changes the length of the array.
+The `pop()` method removes the last element from an array and returns that element. This method changes the length of the array.
+
 ```js
 let vegitables = ['broccoli', 'cauliflower', 'kale'];
 console.log(vegitables.pop()); // Output: "kale"
@@ -373,7 +402,8 @@ console.log(vegitables.pop()); // Output: "broccoli"
 console.log(vegitables.pop()); // Output: "undefined"
 ```
 **3. array.push()**:
-The push() method adds one or more elements to the end of an array and returns the new length of the array.
+The `push()` method adds one or more elements to the end of an array and returns the new length of the array.
+
 ```js
 let animals = ['pigs', 'goats', 'sheep'];
 let count = animals.push('cows');
@@ -381,22 +411,26 @@ console.log(count); // Output: 4
 console.log(animals); // Output: Array ["pigs", "goats", "sheep", "cows"]
 ```
 **4. array.shift()**:
-The shift() method removes the first element from an array and returns that removed element. This method 
-changes the length of the array.
+The `shift()` method removes the first element from an array and returns that removed element. This method changes the length of the array.
+
 ```js
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.shift();
 console.log(fruits) // Output: Array ["Orange", "Apple", "Mango"]
 ```
 **5. array.unshift()**:
-The unshift() method adds one or more elements to the beginning of an array and returns the new length of the array.
+The `unshift()` method adds one or more elements to the beginning of an array and returns the new length of the array.
+
 ```js
 let fruits = ["Banana", "Orange", "Apple"];
 fruits.unshift("Mango","Pineapple");
 console.log(fruits); // Output: Array ["Mango", "Pineapple", "Banana", "Orange", "Apple"]
 ```
+**[⬆ Back to Top](#table-of-contents)**
+
 **6. array.concat()**:
-The concat() method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.
+The `concat()` method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.
+
 ```js
 let array1 = ['a', 'b', 'c'];
 let array2 = ['d', 'e', 'f'];
@@ -404,7 +438,8 @@ let array2 = ['d', 'e', 'f'];
 console.log(array1.concat(array2)); // Output: Array ["a", "b", "c", "d", "e", "f"]
 ```
 **7. array.map()**:
-The map() method creates a new array with the results of calling a provided function on every element in the calling array.
+The `map()` method creates a new array with the results of calling a provided function on every element in the calling array.
+
 ```js
 let array1 = [1, 4, 9, 16];
 // pass a function to map
@@ -412,15 +447,16 @@ let map1 = array1.map(x => x * 2);
 console.log(map1); // Output: Array [2, 8, 18, 32]
 ```
 **8. array.filter()**:
-The filter() method creates a new array with all elements that pass the test implemented by the provided function.
+The `filter()` method creates a new array with all elements that pass the test implemented by the provided function.
+
 ```js
 let words = ['spray', 'limit', 'elite', 'exuberant', 'destruction'];
 let result = words.filter(word => word.length > 6);
 console.log(result); // Output: Array ["exuberant", "destruction"]
 ```
 **9. array.reduce()**:
-The reduce() method executes a reducer function (that you provide) on each element of the array, 
-resulting in a single output value.
+The `reduce()` method executes a reducer function on each element of the array, resulting in a single output value.
+
 ```js
 let array1 = [1, 2, 3, 4];
 let reducer = (accumulator, currentValue) => accumulator + currentValue;
@@ -428,15 +464,19 @@ console.log(array1.reduce(reducer)); // Output: 10
 console.log(array1.reduce(reducer, 5)); // Output: 15
 ```
 **10. array.reduceRight()**:
-The reduceRight() method applies a function against an accumulator and each value of the array (from right-to-left) to reduce it to a single value.
+The `reduceRight()` method applies a function against an accumulator and each value of the array (from right-to-left) to reduce it to a single value.
+
 ```js
 let array1 = [[0, 1], [2, 3], [4, 5]].reduceRight(
   (accumulator, currentValue) => accumulator.concat(currentValue)
 );
 console.log(array1); // Output: Array [4, 5, 2, 3, 0, 1]
 ```
+**[⬆ Back to Top](#table-of-contents)**
+
 **11. array.every()**:
-The every() method tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value. 
+The `every()` method tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.
+
 ```js
 function isBelowThreshold(currentValue) {
   return currentValue < 40;
@@ -444,10 +484,10 @@ function isBelowThreshold(currentValue) {
 let array1 = [1, 30, 39, 29, 10, 13];
 console.log(array1.every(isBelowThreshold)); // Output: true
 ```
-**[⬆ Back to Top](#table-of-contents)**
 
 **12. array.some()**:
-The some() method tests whether at least one element in the array passes the test implemented by the provided function. It returns a Boolean value.
+The `some()` method tests whether at least one element in the array passes the test implemented by the provided function. It returns a Boolean value.
+
 ```js
 let array = [1, 2, 3, 4, 5];
 let even = function(element) {
@@ -457,15 +497,16 @@ let even = function(element) {
 console.log(array.some(even)); // Output: true
 ```
 **13. array.indexOf()**:
-The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present.
+The `indexOf()` method returns the first index at which a given element can be found in the array, or -1 if it is not present.
+
 ```js
 let beasts = ['ant', 'bison', 'camel'];
 console.log(beasts.indexOf('camel')); // Output: 2
 console.log(beasts.indexOf('giraffe')); // Output: -1
 ```
 **14. array.lastIndexOf()**:
-The lastIndexOf() method returns the index within the calling String object of the last occurrence 
-of the specified value, searching backwards from fromIndex. Returns -1 if the value is not found.
+The `lastIndexOf()` method returns the index within the array of the last occurrence of the specified value, searching backwards from the specified index.
+
 ```js
 let paragraph = 'The quick brown fox jumps over the lazy dog. If the dog barked, was it really lazy?';
 let searchTerm = 'dog';
@@ -473,7 +514,8 @@ console.log('The index of the first "' + searchTerm + '" from the end is ' + par
 // Output: "The index of the first "dog" from the end is 52"
 ```
 **15. array.find()**:
-The find() method returns the value of the first element in the provided array that satisfies the provided testing function.
+The `find()` method returns the value of the first element in the array that satisfies the provided testing function.
+
 ```js
 let array1 = [5, 12, 8, 130, 44];
 let found = array1.find(function(element) {
@@ -481,8 +523,12 @@ let found = array1.find(function(element) {
 });
 console.log(found); // Output: 130
 ```
+**[⬆ Back to Top](#table-of-contents)**
+
 **16. array.findIndex()**:
-The findIndex() method returns the index of the first element in the array that satisfies the provided testing function. Otherwise, it returns -1, indicating that no element passed the test.
+
+The `findIndex()` method returns the index of the first element in the array that satisfies the provided testing function. Otherwise, it returns -1, indicating that no element passed the test.
+
 ```js
 let array1 = [5, 12, 8, 130, 44];
 function isLargeNumber(element) {
@@ -491,7 +537,8 @@ function isLargeNumber(element) {
 console.log(array1.findIndex(isLargeNumber)); // Output: 3
 ```
 **17. array.includes()**:
-The includes() method determines whether an array includes a certain value among its entries, returning true or false as appropriate.
+The `includes()` method determines whether an array includes a certain value among its entries, returning true or false as appropriate.
+
 ```js
 let array1 = [1, 2, 3];
 console.log(array1.includes(2)); // Output: true
@@ -499,7 +546,8 @@ let pets = ['cat', 'dog', 'bat'];
 console.log(pets.includes('at')); // Output: false
 ```
 **18. array.forEach()**:
-The forEach() method executes a provided function once for each array element.
+The `forEach()` method executes a provided function once for each array element.
+
 ```js
 const array1 = ['a', 'b', 'c'];
 array1.forEach(element => console.log(element));
@@ -507,8 +555,9 @@ array1.forEach(element => console.log(element));
 // expected output: "b"
 // expected output: "c"
 ```
-**18. array.sort()**:
-The purpose of the compare function is to define an alternative sort order. When the sort() function compares two values, it sends the values to the compare function, and sorts the values according to the returned (negative, zero, positive) value.
+**19. array.sort()**:
+The `sort()` method sorts the elements of an array in place and returns the sorted array.
+
 ```js
 const numbers = [1, 2, 5, 3, 4];
 numbers.sort((a, b) => a - b);
@@ -517,7 +566,7 @@ console.log(numbers); // [1,2,3,4,5]
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## Q.18 Difference between Spread Syntex and Rest Syntax?
+## Q.19 Difference between Spread Syntex and Rest Syntax?
 The main difference between `rest` and `spread` is that the rest operator puts the rest of some specific user-supplied values into a JavaScript array. But the spread syntax expands iterables into individual elements.
 
 |Spread Syntax           |  Rest Syntax                    |
@@ -527,34 +576,91 @@ The main difference between `rest` and `spread` is that the rest operator puts t
 |You may or may not use the strict mode inside the function containing the spread operator. | You can not use the strict mode inside function containing the rest operator.|
 |It will overwrite the identical properties inside two objects and replace the former with the latter. | It simply collects all properties and wraps them inside a container.|
 
-## Q.19 What is the difference between for..in and for..of?
-for in: iterates over all enumerable properties of an object that are keyed by strings.
-for of: iterates over the values of an iterable objects.
+**[⬆ Back to Top](#table-of-contents)**
+
+## Q.20 What is the difference between for..in and for..of?
+**For In Loop**
+1. The for..in loop iterates over all enumerable properties of an object that are keyed by strings.
+2. It is used to loop through the properties of an object, including inherited properties from its prototype chain.
+3. It should not be used to iterate over arrays because it may iterate over prototype properties as well.
+
+**For Of Lopp**
+1. The for..of loop iterates over the values of an iterable object, such as arrays, strings, maps, sets, etc.
+2. It is used to loop through the elements of an iterable, providing direct access to each element's value.
+3. It cannot be used to loop over plain objects, as they are not iterable by default.
+
 ```js
 // for..in
 let list = [10, 20, 30];
 for (let i in list) {
   console.log(i); // "0", "1", "2",
 }
+
+const obj = { a: 1, b: 2, c: 3 };
+for (const key in obj) {
+  console.log(key); // Output: a, b, c
+}
+
+```
+```js
 // for..of
-for (let i of list) {
-  console.log(i); // "10", "20", "30"
+const arr = [1, 2, 3];
+for (const value of arr) {
+  console.log(value); // Output: 1, 2, 3
 }
 ```
+**Key Differences**
+1. `for..in` iterates over object properties, while `for..of` iterates over iterable values.
+2. `for..in` is used for objects, while `for..of` is used for arrays, strings, maps, sets, etc.
+3. `for..in` may include inherited properties, while `for..of` only iterates over the elements directly present in the iterable.
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## Q.20 What is the difference forEach and map?
+## Q.21 What is the difference forEach and map?
 | forEach           |  map                     |
 |-------------------|--------------------------|
 |Iterates through the elements in an array.| Iterates through the elements in an array.|
 |Executes a callback for each element.| "Maps" each element to a new element by calling the function on each element, creating a new array as a result.|
-|Does not return a value.| Return new array.
+|Does not return a value.| Return new array.|
+|The forEach method iterates over the elements of an array and executes a provided callback function once for each array element.|The map method iterates over the elements of an array and applies a provided callback function to each element, creating a new array with the results of calling the callback function on each element.|
+|It does not return a new array but instead iterates over the existing array and performs an action for each element.| It returns a new array containing the results of applying the callback function to each element of the original array, without mutating the original array.|
+|It is commonly used for performing side effects such as logging, updating variables, or invoking other functions.|It is commonly used for transforming each element of an array into a new value based on a specified mapping function.
 
-## Q.21 What is a RegExp object?
+**Key Differences**
+
+1. `forEach` executes a callback function for each element of the array but does not return a new array, while `map` creates a new array by applying a callback function to each element.
+2. `forEach` is used when you want to perform an action or side effect for each element without creating a new array, while `map` is used when you want to transform each element of the array into a new value and create a new array.
+
+```js
+// forEach method example
+const numbers = [1, 2, 3];
+numbers.forEach((num) => console.log(num * 2)); // Output: 2, 4, 6
+
+// map method example
+const doubledNumbers = numbers.map((num) => num * 2);
+console.log(doubledNumbers); // Output: [2, 4, 6]
+```
+
+**[⬆ Back to Top](#table-of-contents)**
+
+## Q.22 What is a RegExp object?
 A regular expression is an object that describes a pattern of characters.
 
-## Q.22 What are the benefits of using arrow function function?
+A RegExp (regular expression) object is a built-in object in JavaScript that represents a regular expression, which is a sequence of characters that forms a search pattern. Regular expressions are used for pattern matching within strings.
+
+A RegExp object can be created using the RegExp constructor or by using a literal notation enclosed in forward slashes (/). It can then be used with various string methods for searching, matching, replacing, or splitting strings based on the specified pattern.
+
+```js
+const pattern = /hello/i; // Literal notation with 'i' flag for case-insensitivity
+const pattern2 = new RegExp('world', 'gi'); // Using the RegExp constructor with 'gi' flags
+const str = 'Hello world!';
+console.log(pattern.test(str)); // Output: true
+console.log(pattern2.exec(str)); // Output: ['world', index: 6, input: 'Hello world!', groups: undefined]
+```
+
+**[⬆ Back to Top](#table-of-contents)**
+
+## Q.23 What are the benefits of using arrow function function?
 Arrow syntax automatically binds this to the surrounding code's context.And `=>` is shorter and simpler than function, although stylistic issues are often subjective.
 ```js
 let greet = () => console.log('Hello'); //No Argument
@@ -578,7 +684,7 @@ console.log(result); // 314
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## Q.23 What is a first class function?
+## Q.24 What is a first class function?
 In javaScript, functions can be stored as a variable inside an object or an array as well as it can be passed as an argument or be returned by another function. That makes function first-class function in JavaScript.
 ```js
 const message = function() {
