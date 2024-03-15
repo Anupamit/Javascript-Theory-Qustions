@@ -661,7 +661,20 @@ console.log(pattern2.exec(str)); // Output: ['world', index: 6, input: 'Hello wo
 **[⬆ Back to Top](#table-of-contents)**
 
 ## Q.23 What are the benefits of using arrow function function?
-Arrow syntax automatically binds this to the surrounding code's context.And `=>` is shorter and simpler than function, although stylistic issues are often subjective.
+Arrow functions in JavaScript provide several benefits over traditional function expressions:
+
+1. Shorter Syntax: Arrow functions have a concise syntax compared to traditional function expressions, making the code cleaner and more readable.
+
+2. Implicit Return: Arrow functions with a single expression automatically return the result of that expression without needing an explicit return statement.
+
+3. Lexical this Binding: Arrow functions do not have their own this context. Instead, they inherit the this value from the surrounding code (lexical scoping). This eliminates the need to use bind, call, or apply to access the correct this value inside nested functions.
+
+4. No arguments Object: Arrow functions do not have their own arguments object. Instead, they inherit the arguments object from the containing non-arrow function. This can help avoid confusion and improve code clarity.
+
+5. Implicit Parameters: If an arrow function has only one parameter, the parentheses around the parameter list can be omitted for a cleaner syntax.
+
+6. Implicit Block Scoping: Arrow functions do not create their own execution context, so they do not have their own this, arguments, super, or new.target. This simplifies the code and reduces the risk of bugs related to scoping.
+
 ```js
 let greet = () => console.log('Hello'); //No Argument
 greet(); // Hello
@@ -685,68 +698,119 @@ console.log(result); // 314
 **[⬆ Back to Top](#table-of-contents)**
 
 ## Q.24 What is a first class function?
-In javaScript, functions can be stored as a variable inside an object or an array as well as it can be passed as an argument or be returned by another function. That makes function first-class function in JavaScript.
+In JavaScript, functions are considered first-class citizens, which means they can be treated like any other value. Specifically, this means that functions can be:
+
+1. `Stored in Variables`: Functions can be assigned to variables, making them callable via the variable name.
+
+2. `Passed as Arguments`: Functions can be passed as arguments to other functions.
+
+3. `Returned from Functions`: Functions can be returned as values from other functions.
+
+4. `Stored in Data Structures`: Functions can be stored in arrays, objects, or other data structures.
+
+This flexibility allows for powerful programming paradigms such as functional programming, where functions are used as building blocks for creating complex behavior.
+
 ```js
-const message = function() {
-   console.log("Hello World!");
-}
-message(); //function to a variable
-
-function sayHello() {
-   return "Hello, ";
-}
-function greeting(helloMessage, name) {
-  console.log(helloMessage() + name);
-}
-greeting(sayHello, "JavaScript!");//function as an Argument
-
-function sayHello() {
-   return function() {
-      console.log("Hello!");
-   }
-} //Return a function
-
+// Function stored in a variable
 const sayHello = function() {
-   return function() {
-      console.log("Hello!");
-   }
-}
-const myFunc = sayHello();
-myFunc(); //Using a variable
+  console.log("Hello!");
+};
+sayHello(); // Output: Hello!
 
-function sayHello() {
-   return function() {
-      console.log("Hello!");
-   }
+// Function passed as an argument
+function greet(fn) {
+  fn();
 }
-sayHello()(); //Using double parentheses
+greet(sayHello); // Output: Hello!
+
+// Function returned from another function
+function getGreeting() {
+  return function() {
+    console.log("Hi there!");
+  };
+}
+const greeting = getGreeting();
+greeting(); // Output: Hi there!
+
+// Function stored in an array
+const functions = [sayHello, greeting];
+functions.forEach(fn => fn()); // Output: Hello! Hi there!
+
 ```
 We are using double parentheses ()() to invoke the returned function as well.
+In summary, JavaScript's support for first-class functions allows for more expressive and flexible code, enabling advanced programming techniques and design patterns.
 
 **[⬆ Back to Top](#table-of-contents)**
 
 ## Q.24 What is a higher order function?
-A Higher-Order function is a function that receives a function as an argument or returns the function as output.
-For e.g, Array.prototype.map(), Array.prototype.filter() , Array.prototype.forEach() and Array.prototype.reduce() are some of the Higher-Order functions in javascript.
+A higher-order function is a function that either takes one or more functions as arguments or returns a function as its result. In other words, a higher-order function operates on other functions, either by accepting them as arguments, returning them, or both.
+
+Here are some common characteristics of higher-order functions:
+
+1. Accepting Functions as Arguments: Higher-order functions can take other functions as arguments to customize their behavior. This allows for greater flexibility and reusability in code.
+
+2. Returning Functions as Results: Higher-order functions can also generate and return new functions based on their input arguments or other conditions. This enables the creation of functions on the fly and dynamic behavior in programs.
+
+3. Enabling Abstraction and Composition: Higher-order functions promote code abstraction and composition by allowing developers to encapsulate common patterns and behaviors in functions. This leads to more modular and maintainable code.
+
+Examples of higher-order functions include map, filter, reduce, and forEach in JavaScript's array prototype, as well as functions in functional programming libraries like lodash and ramda.
+```js
+// Higher-order function that takes a function as argument
+function applyOperation(x, operation) {
+  return operation(x);
+}
+
+function double(x) {
+  return x * 2;
+}
+
+console.log(applyOperation(5, double)); // Output: 10
+
+// Higher-order function that returns a function as result
+function createMultiplier(factor) {
+  return function(x) {
+    return x * factor;
+  };
+}
+
+const triple = createMultiplier(3);
+console.log(triple(7)); // Output: 21
+```
+In summary, higher-order functions are a powerful feature of functional programming that enable flexible, reusable, and expressive code by treating functions as first-class citizens.
 
 ## Q.25 What is a unary function?
 Unary function (i.e. monadic) is a function that accepts exactly one argument. It stands for single argument accepted by a function.
+
+A unary function is a function that accepts exactly one argument. The term "unary" comes from the Latin word "unarius," meaning "consisting of one." Unary functions are common in programming and mathematics, and they play an important role in various contexts.
+
+In JavaScript, unary functions are functions that take a single parameter. They are called unary because they operate on only one operand or argument.
+
 ```js
 const unaryFunction = (number) => number + 10;
 console.log(unaryFunction(10)); // 20
+
+// Unary function example
+const square = x => x * x;
+
+console.log(square(4)); // Output: 16
+
 ```
 ## Q.26 What is currying function?
+Currying is a functional programming technique that involves transforming a function with multiple arguments into a sequence of nested functions, each taking a single argument. The curried function returns a new function after each argument is provided, until all arguments are fulfilled and the final result is produced.
+
 Currying is the process of taking a function with multiple arguments and turning it into a sequence of functions each with only a single argument.
 
 In other words, when a function, instead of taking all arguments at one time, takes the first one and return a new function that takes the second one and returns a new function which takes the third one, and so forth, until all arguments have been fulfilled.
+
 ```js
-// Normal function
+// Normal function with multiple arguments
 const add = (a, b, c) => {
   return a + b + c;
 };
-console.log(add(10, 10, 10)); // 30
 
-// Currying function
+console.log(add(10, 20, 30)); // Output: 60
+
+// Curried function
 const addCurry = (a) => {
   return (b) => {
     return (c) => {
@@ -754,14 +818,21 @@ const addCurry = (a) => {
     };
   };
 };
-console.log(addCurry(20)(20)(20)); // 60
+
+console.log(addCurry(20)(20)(20)); // Output: 60
+
 ```
 **[⬆ Back to Top](#table-of-contents)**
 
 ## Q.27 What is Constructor function in js?
+A constructor function in JavaScript is a special type of function that is used to create and initialize objects. It serves as a blueprint for creating multiple objects with similar properties and behaviors.
+
+In JavaScript, constructor functions are defined using the function keyword and are typically named with an initial capital letter to distinguish them from regular functions.
+
 A constructor is a special function that creates and initializes an object instance of a class. In JavaScript, a constructor gets called when an object is created using the `new` keyword.
 
 The purpose of a constructor is to create a new object and set values for any existing object properties.
+
 ```js
 function User() {
     this.name = 'Bob';
@@ -776,19 +847,45 @@ function Employee(name, age) {
 var emp1 = new Employee('Anupam Rai', 28);
 console.log(emp1.name);// "Anupam Rai"
 console.log(emp1.age );// 28
+
+
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+const john = new Person('John', 30);
+console.log(john.name); // Output: John
+console.log(john.age);  // Output: 30
 ```
+In this example, Person is a constructor function that accepts name and age parameters. When called with the new keyword, it creates a new object (john) with the specified properties.
+
 ## Q.28 What is a pure function?
 Pure functions are functions that accept an input and returns a value without modifying any data outside its scope(Side Effects). Its output or return value must depend on the input/arguments and pure functions must return a value.
 
 It is a pure function because you always get a Hello `<name>` as output for the `<name>` pass as an input.
+
+A pure function is a function that meets two main criteria:
+
+1. Deterministic: A pure function always produces the same output for the same input, regardless of the number of times it is called or the external factors. It does not rely on any mutable state or external dependencies.
+
+2. No Side Effects: A pure function does not modify any external state or produce observable side effects such as changing global variables, modifying input parameters, or performing I/O operations.
+
 ```js
 // Pure Function
+function add(a, b) {
+  return a + b;
+}
+
+```
+In this example, the add function is pure because it takes two input arguments (a and b) and returns their sum without modifying any external state or relying on external factors.
+
+```js
 function sayGreeting(name) {
   return `Hello ${name}`;
 }
 console.log(sayGreeting("World"));
 ```
-
 The function\'s output now depends on an outer state called greeting. What if someone changes the value of the greeting variable to `Hola`? It will change the output of the `sayGreeting()` function even when you pass the same input.
 
 ```js
