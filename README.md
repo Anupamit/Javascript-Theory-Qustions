@@ -742,7 +742,7 @@ In summary, JavaScript's support for first-class functions allows for more expre
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## Q.24 What is a higher order function?
+## Q.25 What is a higher order function?
 A higher-order function is a function that either takes one or more functions as arguments or returns a function as its result. In other words, a higher-order function operates on other functions, either by accepting them as arguments, returning them, or both.
 
 Here are some common characteristics of higher-order functions:
@@ -778,7 +778,7 @@ console.log(triple(7)); // Output: 21
 ```
 In summary, higher-order functions are a powerful feature of functional programming that enable flexible, reusable, and expressive code by treating functions as first-class citizens.
 
-## Q.25 What is a unary function?
+## Q.26 What is a unary function?
 Unary function (i.e. monadic) is a function that accepts exactly one argument. It stands for single argument accepted by a function.
 
 A unary function is a function that accepts exactly one argument. The term "unary" comes from the Latin word "unarius," meaning "consisting of one." Unary functions are common in programming and mathematics, and they play an important role in various contexts.
@@ -795,7 +795,7 @@ const square = x => x * x;
 console.log(square(4)); // Output: 16
 
 ```
-## Q.26 What is currying function?
+## Q.27 What is currying function?
 Currying is a functional programming technique that involves transforming a function with multiple arguments into a sequence of nested functions, each taking a single argument. The curried function returns a new function after each argument is provided, until all arguments are fulfilled and the final result is produced.
 
 Currying is the process of taking a function with multiple arguments and turning it into a sequence of functions each with only a single argument.
@@ -824,7 +824,7 @@ console.log(addCurry(20)(20)(20)); // Output: 60
 ```
 **[⬆ Back to Top](#table-of-contents)**
 
-## Q.27 What is Constructor function in js?
+## Q.28 What is Constructor function in js?
 A constructor function in JavaScript is a special type of function that is used to create and initialize objects. It serves as a blueprint for creating multiple objects with similar properties and behaviors.
 
 In JavaScript, constructor functions are defined using the function keyword and are typically named with an initial capital letter to distinguish them from regular functions.
@@ -860,7 +860,7 @@ console.log(john.age);  // Output: 30
 ```
 In this example, Person is a constructor function that accepts name and age parameters. When called with the new keyword, it creates a new object (john) with the specified properties.
 
-## Q.28 What is a pure function?
+## Q.29 What is a pure function?
 Pure functions are functions that accept an input and returns a value without modifying any data outside its scope(Side Effects). Its output or return value must depend on the input/arguments and pure functions must return a value.
 
 It is a pure function because you always get a Hello `<name>` as output for the `<name>` pass as an input.
@@ -900,7 +900,7 @@ A function must pass two tests to be considered **pure**:
 
 **[⬆ Back to Top](#table-of-contents)**
 
-##  Q.29  What is an arguments object?
+##  Q.30  What is an arguments object?
 The arguments object is an Array-like object ( arguments ) accessible inside functions that contains the values of the arguments passed to that function.
 ```js
 function sum() {
@@ -912,7 +912,7 @@ function sum() {
 } // arguments object
 sum(10, 20, 30); // returns 60
 ```
-## Q.30 What is the way to find the number of parameters expected by a function?
+## Q.31 What is the way to find the number of parameters expected by a function?
 The length property indicates the number of parameters expected by the function.
 ```js
 // function.length
@@ -925,7 +925,7 @@ console.log(fun2.length); // 2
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## Q.31 What is the difference between Call, Apply and Bind?
+## Q.32 What is the difference between Call, Apply and Bind?
 - Call invokes the function and allows you to pass in arguments one by one.
 - Apply invokes the function and allows you to pass in arguments as an array.
 - Bind returns a new function, allowing you to pass in a this array and any number of arguments.
@@ -967,7 +967,7 @@ sayEmployee2("Hello"); // Hello Aarush Krishna
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## Q.32 What is an anonymous function?
+## Q.33 What is an anonymous function?
 An anonymous function is a function without a name. Anonymous functions are commonly assigned to a variable name or used as a callback function.
 ```js
 // Anonymous function
@@ -995,7 +995,7 @@ const person = {
 let add = (a, b) => a + b;
 add(10, 20); // 30
 ```
-## Q.33 Explain how this works in JavaScript?
+## Q.34 Explain how this works in JavaScript?
 The this keyword refers to an object. Which object depends on how this is being invoked (used or called). The this keyword refers to different objects depending on how it is used.
 - In an object method, this refers to the object.
 - Alone, this refers to the global object.
@@ -1006,7 +1006,7 @@ The this keyword refers to an object. Which object depends on how this is being 
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## Q.34 What are closures?
+## Q.35 What are closures?
 A closure is the combination of a function bundled together with references to its surrounding state.A closure gives you access to an outer function's scope from an inner function.
 ```js
 // lexical
@@ -1036,7 +1036,7 @@ fun2();
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## Q.35 What is callback() function in javascript?
+## Q.36 What is callback() function in javascript?
 A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
 ```js
 // callback() function
@@ -1050,7 +1050,7 @@ function processUserInput(callback) {
 console.log(processUserInput(greeting));
 ```
 The above example is a synchronous callback, as it is executed immediately.
-## Q.36 What is event handling in javascript?
+## Q.37 What is event handling in javascript?
 The change in the state of an object is known as an `Event`. In html, there are various events which represents that some activity is performed by the user or by the browser.
 
 When javascript code is included in HTML, js react over these events and allow the execution. This process of reacting over the events is called `Event Handling`. Thus, js handles the HTML events via `Event Handlers`.
@@ -1059,7 +1059,7 @@ When javascript code is included in HTML, js react over these events and allow t
 |onchange |	When the user modifies or changes the value of a form element|
 |onload |	When the browser finishes the loading of the page|
 
-## Q.37 What is an event delegation?
+## Q.38 What is an event delegation?
 Event Delegation is basically a pattern to handle events efficiently. Instead of adding an event listener to each and every similar element, we can add an event listener to a parent element and call an event on a particular target using the event.target property of the event object.
 ```js
 document.getElementById('buttons')
@@ -1072,7 +1072,7 @@ document.getElementById('buttons')
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## Q.38 What is the use of setTimeout?
+## Q.39 What is the use of setTimeout?
 The `setTimeout()` method is used to call a function or evaluates an expression after a specified number of milliseconds.
 ```js
 setTimeout(() => {
@@ -1080,13 +1080,13 @@ setTimeout(() => {
 }, "1000")
 ```
 
-## Q.39 What is the use of setInterval?
+## Q.40 What is the use of setInterval?
 The `setInterval()` method is used to call a function or evaluates an expression at specified intervals (in milliseconds). The `setInterval()` method continues calling the function until `clearInterval()` is called, or the window is closed.
 ```js
 setInterval(myTimer, 1000);
 function(){}
 ```
-## Q.40  What is the purpose of clearTimeout method?
+## Q.41  What is the purpose of clearTimeout method?
 The clearTimeout() function is used in javascript to clear the timeout which has been set by setTimeout() function before that. i.e, The return value of setTimeout() function is stored in a variable and it's passed into the clearTimeout() function to clear the timer.
 ```js
 var msg;
@@ -1114,12 +1114,12 @@ Bye World!
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## Q.41 Explain the difference between mutable and immutable objects?
+## Q.42 Explain the difference between mutable and immutable objects?
 A mutable object is an object whose state can be modified after it is created. An immutable object is an object whose state cannot be modified after it is created.
 
 In JavaScript numbers, strings, null, undefined and Booleans are primitive types which are immutable. Objects, arrays, functions, classes, maps, and sets are mutable.
 
-## Q.42 How can you achieve immutability in your own code?
+## Q.43 How can you achieve immutability in your own code?
 For "mutating" objects, use the spread operator,or Object.assign, Array.concat(), etc., to create new objects instead of mutate the original object.
 ```js
 // Array Example
@@ -1131,7 +1131,7 @@ const human = Object.freeze({ race: "human" });
 const aditya = { ...human, name: "Aditya" }; // {race: "human", name: "Aditya"}
 const alienAditya = { ...aditya, race: "alien" }; // {race: "alien", name: "Aditya"}
 ```
-## Q.43 What is Seal and Freeze methods in object?
+## Q.44 What is Seal and Freeze methods in object?
 **Seal**
 It prevents additions or deletion of `properties. seal()` also prevents the modification of property descriptors.
 ```js
@@ -1170,7 +1170,7 @@ console.log(myCar.batteryLife); // 300
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## Q.44 What is shallow copy and deep copy in javascript?
+## Q.45 What is shallow copy and deep copy in javascript?
 **Shallow Copy**
 
 Shallow copy is a bit-wise copy of an object. A new object is created that has an exact copy of the values in the original object. If any of the fields of the object are references to other objects, just the reference addresses are copied i.e., only the memory address is copied.
@@ -1203,7 +1203,7 @@ console.log(newObj); // { a: 10, b: { c: 20 } }
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## Q.45 What is Class in js?
+## Q.46 What is Class in js?
 Classes are in fact `"special functions"`, and just as you can define function expressions and function declarations, the class syntax has two components: `class expressions` and `class declarations`.
 ```js
 // Unnamed Class
@@ -1224,7 +1224,7 @@ let Triangle = class TriangleClass {
 };
 console.log(Triangle.name); // TriangleClass
 ```
-## Q.46 What is difference between private, public and static variables?
+## Q.47 What is difference between private, public and static variables?
 Private variables can be accessed by all the members (functions and variables) of the owner object but not by any other object. Public variables can be accessed by all the members of the owner as well as other objects that can access the owner. Static variables are related to a class. They come into existence as soon as a class come into existence.
 ```js
 // Constructor Function
