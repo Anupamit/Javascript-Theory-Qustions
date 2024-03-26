@@ -1240,7 +1240,7 @@ function MyClass () {
 ```
 **[⬆ Back to Top](#table-of-contents)**
 
-## Q.47 How does await and async works in es6?
+## Q.48 How does await and async works in es6?
 The async and await keywords enable asynchronous, promise-based behavior to be written in a cleaner style, avoiding the need to explicitly configure promise chains.
 
 Async keyword is used along with the function declaration which specifies that this function is now able to accept all types of asynchronous events on itself. Await basically waits for the results which are particularly to be fetched from the source from which that async function is about to fetch the data.
@@ -1258,7 +1258,7 @@ async function fetchMethod() {
 
 fetchMethod();
 ```
-## Q.48 Explain fetch() properties in JavaScript?
+## Q.49 Explain fetch() properties in JavaScript?
 A fetch() function is available in the global window object. The fetch() function takes one mandatory argument, the path to the resource you want to fetch. It returns a Promise, whether it is successful or not. If request is successful .then() function will receive Response object, if request fails then .catch() function will receive an error object
 ```js
 fetch("https://api.github.com/users/learning-zone")
@@ -1275,10 +1275,10 @@ fetch("https://api.github.com/users/learning-zone")
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## Q.49 What is rendering in JavaScript?
+## Q.50 What is rendering in JavaScript?
 JavaScript-powered content needs to be rendered before it can output meaningful code and be displayed for the client. 
 
-## Q.50 What is throttling and debouncing in javascript?
+## Q.51 What is throttling and debouncing in javascript?
 `Throttling` enforces a maximum number of times a function can be called over time. As in "execute this function at most once every 100 milliseconds."
 
 `Debouncing` enforces that a function not be called again until a certain amount of time has passed without it being called. As in "execute this function only if 100 milliseconds have passed without it being called."
