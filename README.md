@@ -800,7 +800,7 @@ Currying is a functional programming technique that involves transforming a func
 
 Currying is the process of taking a function with multiple arguments and turning it into a sequence of functions each with only a single argument.
 
-In other words, when a function, instead of taking all arguments at one time, takes the first one and return a new function that takes the second one and returns a new function which takes the third one, and so forth, until all arguments have been fulfilled.
+In other words, when a function, instead of taking all arguments at one time, takes the first one and returns a new function that takes the second one and returns a new function which takes the third one, and so forth, until all arguments have been fulfilled.
 
 ```js
 // Normal function with multiple arguments
@@ -829,7 +829,7 @@ A constructor function in JavaScript is a special type of function that is used 
 
 In JavaScript, constructor functions are defined using the function keyword and are typically named with an initial capital letter to distinguish them from regular functions.
 
-A constructor is a special function that creates and initializes an object instance of a class. In JavaScript, a constructor gets called when an object is created using the `new` keyword.
+A constructor is a special function that creates and initializes an object instance of a class. In JavaScript, a constructor gets called when an object is created using the new keyword.
 
 The purpose of a constructor is to create a new object and set values for any existing object properties.
 
@@ -878,7 +878,7 @@ function add(a, b) {
 }
 
 ```
-In this example, the add function is pure because it takes two input arguments (a and b) and returns their sum without modifying any external state or relying on external factors.
+In this example, the `add` function is pure because it takes two input arguments (`a` and `b`) and returns their sum without modifying any external state or relying on external factors.
 
 ```js
 function sayGreeting(name) {
@@ -886,7 +886,7 @@ function sayGreeting(name) {
 }
 console.log(sayGreeting("World"));
 ```
-The function\'s output now depends on an outer state called greeting. What if someone changes the value of the greeting variable to `Hola`? It will change the output of the `sayGreeting()` function even when you pass the same input.
+The function's output now depends on an outer state called `greeting`. What if someone changes the value of the `greeting` variable to `Hola` ? It will change the output of the `sayGreeting()` function even when you pass the same input.
 
 ```js
 let greeting = "Hello";
@@ -901,7 +901,8 @@ A function must pass two tests to be considered **pure**:
 **[⬆ Back to Top](#table-of-contents)**
 
 ##  Q.30  What is an arguments object?
-The arguments object is an Array-like object ( arguments ) accessible inside functions that contains the values of the arguments passed to that function.
+The arguments object is an Array-like object (`arguments`) accessible inside functions that contains the values of the arguments passed to that function.
+
 ```js
 function sum() {
   let total = 0;
@@ -909,11 +910,14 @@ function sum() {
     total += arguments[i];
   }
   return total;
-} // arguments object
+}
+
 sum(10, 20, 30); // returns 60
+
 ```
 ## Q.31 What is the way to find the number of parameters expected by a function?
-The length property indicates the number of parameters expected by the function.
+The `length` property indicates the number of parameters expected by the function.
+
 ```js
 // function.length
 function fun1() {}
@@ -926,40 +930,29 @@ console.log(fun2.length); // 2
 **[⬆ Back to Top](#table-of-contents)**
 
 ## Q.32 What is the difference between Call, Apply and Bind?
-- Call invokes the function and allows you to pass in arguments one by one.
-- Apply invokes the function and allows you to pass in arguments as an array.
-- Bind returns a new function, allowing you to pass in a this array and any number of arguments.
+* `Call` invokes the function and allows you to pass in arguments one by one.
+* `Apply` invokes the function and allows you to pass in arguments as an array.
+* `Bind` returns a new function, allowing you to pass in a `this` array and any number of arguments.
+  
 ```js
 const employee1 = { firstName: "Sahima", lastName: "Mutti" };
 const employee2 = { firstName: "Aarush", lastName: "Krishna" };
 
 function say(greeting) {
   console.log(greeting + " " + this.firstName + " " + this.lastName);
-} //call
+}
 
+// Call
 say.call(employee1, "Hi");    // Hi Sahima Mutti 
 say.call(employee2, "Hello"); // Hello Aarush Krishna 
-```
-```js
-const employee1 = { firstName: "Sahima", lastName: "Mutti" };
-const employee2 = { firstName: "Aarush", lastName: "Krishna" };
 
-function say(greeting) {
-  console.log(greeting + " " + this.firstName + " " + this.lastName);
-} //apply
-
+// Apply
 say.apply(employee1, ["Hi"]);    // Hi Sahima Mutti 
 say.apply(employee2, ["Hello"]); // Hello Aarush Krishna 
-```
-```js
-const employee1 = { firstName: "Sahima", lastName: "Mutti" };
-const employee2 = { firstName: "Aarush", lastName: "Krishna" };
 
-function say(greeting) {
-  console.log(greeting + " " + this.firstName + " " + this.lastName);
-} //Bind
-var sayEmployee1 = say.bind(employee1);
-var sayEmployee2 = say.bind(employee2);
+// Bind
+const sayEmployee1 = say.bind(employee1);
+const sayEmployee2 = say.bind(employee2);
 
 sayEmployee1("Hi");    // Hi Sahima Mutti 
 sayEmployee2("Hello"); // Hello Aarush Krishna 
@@ -969,57 +962,62 @@ sayEmployee2("Hello"); // Hello Aarush Krishna
 
 ## Q.33 What is an anonymous function?
 An anonymous function is a function without a name. Anonymous functions are commonly assigned to a variable name or used as a callback function.
+
 ```js
 // Anonymous function
-let show = function () {
+// Anonymous function
+let show = function() {
   console.log("Anonymous function");
 };
 show();
 
-//Anonymous functions as arguments
-setTimeout(function () {
+// Anonymous function as arguments
+setTimeout(function() {
   console.log("Execute later after 1 second");
 }, 1000);
 
-//Immediately invoked function execution
+// Immediately invoked function execution
 const person = {
   firstName: "Ayaan",
   lastName: "Memon"
 };
-(function () {
+(function() {
   console.log(person.firstName + " " + person.lastName); // Ayaan Memon
 })(person);
 
-//Arrow functions
-
+// Arrow functions
 let add = (a, b) => a + b;
 add(10, 20); // 30
 ```
-## Q.34 Explain how this works in JavaScript?
-The this keyword refers to an object. Which object depends on how this is being invoked (used or called). The this keyword refers to different objects depending on how it is used.
-- In an object method, this refers to the object.
-- Alone, this refers to the global object.
-- In a function, this refers to the global object.
-- In a function, in strict mode, this is undefined.
-- In an event, this refers to the element that received the event.
-- Methods like call(), apply(), and bind() can refer this to any object.
+## Q.34 Explain how `this` works in JavaScript?
+The `this` keyword refers to an object. Which object depends on how `this` is being invoked (used or called). The `this` keyword refers to different objects depending on how it is used.
+
+* In an object method, `this` refers to the object.
+* Alone, `this` refers to the global object.
+* In a function, `this` refers to the global object.
+* In a function, in strict mode, `this` is undefined.
+* In an event, `this` refers to the element that received the event.
+* Methods like `call()`, `apply()`, and `bind()` can refer `this` to any object.
+
 
 **[⬆ Back to Top](#table-of-contents)**
 
 ## Q.35 What are closures?
-A closure is the combination of a function bundled together with references to its surrounding state.A closure gives you access to an outer function's scope from an inner function.
+A closure is the combination of a function bundled together with references to its surrounding state. A closure gives you access to an outer function's scope from an inner function.
+
 ```js
-// lexical
- function me() {
-     var name = "Anupam"; // name is a local variable created by init
-     function displayName() { // displayName() is the inner function, a closure
-         console.log(name); // displayName() uses variable declared in the parent function    
-     }
-     displayName();    
+// Lexical
+function me() {
+  var name = "Anupam"; // name is a local variable created by init
+  function displayName() { // displayName() is the inner function, a closure
+    console.log(name); // displayName() uses variable declared in the parent function    
+  }
+  displayName();    
 }
+
 me();
 
-//Dynamic
+// Dynamic
 function fun1() {
   console.log(a); // 10
 }
@@ -1030,37 +1028,47 @@ function fun2() {
 var a = 10;
 fun2();
 // Output
-10
+// 10
+
 ```
-- Variables created without a declaration keyword (var, let, or const) are always global, even if they are created inside a function. Global and local variables with the same name are different variables. Modifying one, does not modify the other.
+
+Variables created without a declaration keyword (`var`, `let`, or `const`) are always global, even if they are created inside a function. Global and local variables with the same name are different variables. Modifying one does not modify the other.
 
 **[⬆ Back to Top](#table-of-contents)**
 
 ## Q.36 What is callback() function in javascript?
 A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
+
 ```js
-// callback() function
+// Callback function
 function greeting(name) {
   alert('Hello ' + name);
 }
+
 function processUserInput(callback) {
   var name = prompt('Please enter your name:');
   callback(name);
 }
+
 console.log(processUserInput(greeting));
+
 ```
 The above example is a synchronous callback, as it is executed immediately.
 ## Q.37 What is event handling in javascript?
+An event is a change in the state of an object. In HTML, various events represent activities performed by the user or by the browser.
+
 The change in the state of an object is known as an `Event`. In html, there are various events which represents that some activity is performed by the user or by the browser.
 
 When javascript code is included in HTML, js react over these events and allow the execution. This process of reacting over the events is called `Event Handling`. Thus, js handles the HTML events via `Event Handlers`.
+
 |Event Handler | Description|
 |onclick |	When mouse click on an element|
 |onchange |	When the user modifies or changes the value of a form element|
 |onload |	When the browser finishes the loading of the page|
 
 ## Q.38 What is an event delegation?
-Event Delegation is basically a pattern to handle events efficiently. Instead of adding an event listener to each and every similar element, we can add an event listener to a parent element and call an event on a particular target using the event.target property of the event object.
+Event delegation is a pattern to handle events efficiently. Instead of adding an event listener to each similar element, we can add an event listener to a parent element and call an event on a particular target using the `event.target` property of the event object.
+
 ```js
 document.getElementById('buttons')
     .addEventListener('click', event => { 
@@ -1073,7 +1081,8 @@ document.getElementById('buttons')
 **[⬆ Back to Top](#table-of-contents)**
 
 ## Q.39 What is the use of setTimeout?
-The `setTimeout()` method is used to call a function or evaluates an expression after a specified number of milliseconds.
+The `setTimeout()` method is used to call a function or evaluate an expression after a specified number of milliseconds.
+
 ```js
 setTimeout(() => {
   console.log("Delayed for 1 second.");
@@ -1081,15 +1090,17 @@ setTimeout(() => {
 ```
 
 ## Q.40 What is the use of setInterval?
-The `setInterval()` method is used to call a function or evaluates an expression at specified intervals (in milliseconds). The `setInterval()` method continues calling the function until `clearInterval()` is called, or the window is closed.
+The `setInterval()` method is used to call a function or evaluate an expression at specified intervals (in milliseconds). The `setInterval()` method continues calling the function until `clearInterval()` is called, or the window is closed.
+
 ```js
 setInterval(myTimer, 1000);
 function(){}
 ```
 ## Q.41  What is the purpose of clearTimeout method?
-The clearTimeout() function is used in javascript to clear the timeout which has been set by setTimeout() function before that. i.e, The return value of setTimeout() function is stored in a variable and it's passed into the clearTimeout() function to clear the timer.
+The `clearTimeout()` function is used in JavaScript to clear the timeout which has been set by the `setTimeout()` function before that. That is, the return value of `setTimeout()` function is stored in a variable and it's passed into the `clearTimeout()` function to clear the timer.
+
 ```js
-var msg;
+let msg;
 function greeting() {
   console.log("Hello World!");
   stop();
@@ -1105,11 +1116,12 @@ function stop() {
 }
 
 start();
-//Output
-start
-Hello World!
-stop
-Bye World!
+// Output
+// start
+// Hello World!
+// stop
+// Bye World!
+
 ```
 
 **[⬆ Back to Top](#table-of-contents)**
@@ -1117,10 +1129,12 @@ Bye World!
 ## Q.42 Explain the difference between mutable and immutable objects?
 A mutable object is an object whose state can be modified after it is created. An immutable object is an object whose state cannot be modified after it is created.
 
-In JavaScript numbers, strings, null, undefined and Booleans are primitive types which are immutable. Objects, arrays, functions, classes, maps, and sets are mutable.
+In JavaScript, numbers, strings, null, undefined, and Booleans are primitive types, which are immutable. Objects, arrays, functions, classes, maps, and sets are mutable.
+
 
 ## Q.43 How can you achieve immutability in your own code?
-For "mutating" objects, use the spread operator,or Object.assign, Array.concat(), etc., to create new objects instead of mutate the original object.
+For "mutating" objects, use the `spread operator`,or `Object.assign`, `Array.concat()`, etc., to create new objects instead of mutate the original object.
+
 ```js
 // Array Example
 const arr = [10, 20, 30];
@@ -1130,10 +1144,12 @@ const newArr = [...arr, 40, 50]; // [10, 20, 30, 40, 50]
 const human = Object.freeze({ race: "human" });
 const aditya = { ...human, name: "Aditya" }; // {race: "human", name: "Aditya"}
 const alienAditya = { ...aditya, race: "alien" }; // {race: "alien", name: "Aditya"}
+
 ```
 ## Q.44 What is Seal and Freeze methods in object?
 **Seal**
-It prevents additions or deletion of `properties. seal()` also prevents the modification of property descriptors.
+ Prevents additions or deletions of properties. `seal()` also prevents the modification of property descriptors.
+ 
 ```js
 const myCar = {
   maxSpeed: 250,
@@ -1147,9 +1163,11 @@ myCar.color = 'blue';
 console.log(myCar.color); // undefined
 delete myCar.batteryLife; // false
 console.log(myCar.batteryLife); // 300
+
 ```
 **Freeze**
-It does the same that `Object.seal()` plus it makes the properties non-writable.
+Makes properties non-writable in addition to sealing the object.
+
 ```js
 const myCar = {
   maxSpeed: 250,
@@ -1166,15 +1184,17 @@ console.log(myCar.color); // undefined
 
 delete myCar.batteryLife;
 console.log(myCar.batteryLife); // 300
+
 ```
 
 **[⬆ Back to Top](#table-of-contents)**
 
 ## Q.45 What is shallow copy and deep copy in javascript?
 **Shallow Copy**
+A bit-wise copy of an object. A new object is created that has an exact copy of the values in the original object. If any of the fields of the object are references to other objects, just the reference addresses are copied (i.e., only the memory address is copied).
 
-Shallow copy is a bit-wise copy of an object. A new object is created that has an exact copy of the values in the original object. If any of the fields of the object are references to other objects, just the reference addresses are copied i.e., only the memory address is copied.
-A Shallow copy of the object can be done using object.assign()
+A shallow copy of the object can be done using `Object.assign()`.
+
 ```js
 let obj = {
   a: 10,
@@ -1185,9 +1205,10 @@ let objCopy = Object.assign({}, obj);
 console.log(objCopy); // Result - { a: 1, b: 2 }
 ```
 **Deep Copy**
-A deep copy copies all fields, and makes copies of dynamically allocated memory pointed to by the fields. A deep copy occurs when an object is copied along with the objects to which it refers.
+Copies all fields and makes copies of dynamically allocated memory pointed to by the fields. A deep copy occurs when an object is copied along with the objects to which it refers. 
 
-A Deep copy of the object can be done using JSON.parse(JSON.stringify(object))
+A deep copy of the object can be done using `JSON.parse(JSON.stringify(object))`.
+
 ```js
 let obj2 = {
   a: 10,
@@ -1204,7 +1225,8 @@ console.log(newObj); // { a: 10, b: { c: 20 } }
 **[⬆ Back to Top](#table-of-contents)**
 
 ## Q.46 What is Class in js?
-Classes are in fact `"special functions"`, and just as you can define function expressions and function declarations, the class syntax has two components: `class expressions` and `class declarations`.
+A class in JavaScript is a type of function. Classes are declared with the class keyword. They act as blueprints for creating objects.
+
 ```js
 // Unnamed Class
 class Rectangle {
@@ -1223,9 +1245,12 @@ let Triangle = class TriangleClass {
   }
 };
 console.log(Triangle.name); // TriangleClass
+
 ```
 ## Q.47 What is difference between private, public and static variables?
-Private variables can be accessed by all the members (functions and variables) of the owner object but not by any other object. Public variables can be accessed by all the members of the owner as well as other objects that can access the owner. Static variables are related to a class. They come into existence as soon as a class come into existence.
+* Private Variables: Can be accessed by all the members (functions and variables) of the owner object but not by any other object.
+* Public Variables: Can be accessed by all the members of the owner as well as other objects that can access the owner.
+* Static Variables: Related to a class. They come into existence as soon as a class comes into existence.
 ```js
 // Constructor Function
 function MyClass () {
@@ -1241,9 +1266,10 @@ function MyClass () {
 **[⬆ Back to Top](#table-of-contents)**
 
 ## Q.48 How does await and async works in es6?
-The async and await keywords enable asynchronous, promise-based behavior to be written in a cleaner style, avoiding the need to explicitly configure promise chains.
+The `async` and `await` keywords enable asynchronous, promise-based behavior to be written in a cleaner style, avoiding the need to explicitly configure promise chains.
 
-Async keyword is used along with the function declaration which specifies that this function is now able to accept all types of asynchronous events on itself. Await basically waits for the results which are particularly to be fetched from the source from which that async function is about to fetch the data.
+`Async` keyword is used along with the function declaration, specifying that this function is now able to accept all types of asynchronous events on itself. `Await` basically waits for the results which are particularly to be fetched from the source from which that `async` function is about to fetch the data.
+
 ```js
 // async() and await()
 async function fetchMethod() {
@@ -1257,9 +1283,10 @@ async function fetchMethod() {
 }
 
 fetchMethod();
+
 ```
 ## Q.49 Explain fetch() properties in JavaScript?
-A fetch() function is available in the global window object. The fetch() function takes one mandatory argument, the path to the resource you want to fetch. It returns a Promise, whether it is successful or not. If request is successful .then() function will receive Response object, if request fails then .catch() function will receive an error object
+The `fetch()` function is available in the global window object. It takes one mandatory argument, the path to the resource you want to fetch. It returns a Promise, whether it is successful or not. If the request is successful, the `.then()` function will receive a `Response` object; if the request fails, the `.catch()` function will receive an error object.
 ```js
 fetch("https://api.github.com/users/learning-zone")
   .then(function (response) {
@@ -1276,11 +1303,11 @@ fetch("https://api.github.com/users/learning-zone")
 **[⬆ Back to Top](#table-of-contents)**
 
 ## Q.50 What is rendering in JavaScript?
-JavaScript-powered content needs to be rendered before it can output meaningful code and be displayed for the client. 
+JavaScript-powered content needs to be rendered before it can output meaningful code and be displayed for the client.
 
 ## Q.51 What is throttling and debouncing in javascript?
-`Throttling` enforces a maximum number of times a function can be called over time. As in "execute this function at most once every 100 milliseconds."
+* `Throttling` enforces a maximum number of times a function can be called over time. As in "execute this function at most once every 100 milliseconds."
 
-`Debouncing` enforces that a function not be called again until a certain amount of time has passed without it being called. As in "execute this function only if 100 milliseconds have passed without it being called."
+* `Debouncing` enforces that a function not be called again until a certain amount of time has passed without it being called. As in "execute this function only if 100 milliseconds have passed without it being called."
 
 **[⬆ Back to Top](#table-of-contents)**
